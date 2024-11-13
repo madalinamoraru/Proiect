@@ -128,8 +128,14 @@ Observație: folderele `build/` și `install_dir/` sunt adăugate în fișierul 
 conțin fișiere generate și nu ne ajută să le versionăm.
 
 
+## Teste
+
+Acest branch folosește Boost-ext/ut pentru a crea teste unitare. Pentru mai multe informații
+despre cum funcționează, cititi [README_Teste](./tests/README_Tests.md).
+
+
 ## Resurse
-- Boost-ext/ut : 
-  - Link documentatie : https://github.com/boost-ext/ut
-  - Link versiune/tag folosit : https://github.com/boost-ext/ut/releases/tag/v1.1.9 ( v1.1.9  -> urmatoarele versiuni cu pot fi folosite cu Clang)
+- Boost-ext/ut:
+  - Link documentație: https://github.com/boost-ext/ut
+  - Link versiune/tag folosit: https://github.com/boost-ext/ut/releases/tag/v1.1.9 ( v1.1.9  -> următoarele versiuni nu puteau fi folosite cu Clang)
 - adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit
