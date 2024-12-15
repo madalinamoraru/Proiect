@@ -150,4 +150,6 @@ conțin fișiere generate și nu ne ajută să le versionăm.
 
 - [SFML](https://github.com/SFML/SFML/tree/2.6.1) (Zlib)
   - [OpenAL](https://openal-soft.org/) (LGPL): din cauza licenței, trebuie distribuită ca shared library
+- [Poza cu avionul](https://pixabay.com/vectors/travel-holiday-trip-flight-6913775/)
+- [Font](https://fonts.google.com/selection?selection.family=Fira+Sans)
 - adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit
