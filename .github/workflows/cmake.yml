@@ -28,6 +28,7 @@ env:
   BUILD_DIR: "build"
   EXT_DIR: "ext"
   GEN_DIR: "src/generated"
+  GTEST_VERSION: "v1.15.2"
 
 defaults:
   run:
