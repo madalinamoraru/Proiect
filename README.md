@@ -1,4 +1,4 @@
-# Proiect
+# Shadows' Path
 
 ### Folosiți template-ul corespunzător grupei voastre!
 
