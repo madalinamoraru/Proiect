@@ -15,7 +15,6 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-#set(SFML_DIR "C:/Users/Cosmin/CLionProjects/Proiect/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit/SFML-2.6.2/lib/cmake/SFML")
 
 set(SFML_DIR "C:/Users/Madalina/CLionProjects/untitled1/SFML-2.6.1/lib/cmake/SFML")
 
@@ -28,6 +27,17 @@ find_package(SFML 2.6 CONFIG REQUIRED COMPONENTS system window graphics)
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
 add_executable(${MAIN_EXECUTABLE_NAME}
         main.cpp
+        Game.cpp
+        GameException.h
+        InputState.h
+        Entity.h
+        Entity.cpp
+        Player.h
+        Player.cpp
+        Enemy.h
+        Enemy.cpp
+        Game.h
+        Game.cpp
 )
 
 
