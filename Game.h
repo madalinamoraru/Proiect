@@ -14,24 +14,29 @@ private:
     sf::RenderWindow window;
     sf::Color background;
     unsigned fps;
-    Player player;
 
-    // Atributul de tip pointer la clasa de baza:
+    // --- CHANGE: REMOVED "Player player;" ---
+    // The Game class no longer owns the player.
+    // We access it via Player::getInstance() instead.
+
+    // Pointer attribute to base class:
     std::vector<std::unique_ptr<Entity>> enemies;
 
-    // Atribut static
+    // Static attribute
     static const unsigned DEFAULT_WIDTH = 800;
 
 public:
     Game(unsigned w = DEFAULT_WIDTH, unsigned h = 600, const std::string& title = "Shadow's Dojo");
+
     friend std::ostream& operator<<(std::ostream& os, const Game& game);
-    // Stergem copy constructor si operator de atribuire din Game
+
+    // Delete copy constructor and assignment operator
     Game(const Game&) = delete;
     Game& operator=(const Game&) = delete;
 
     void run();
 
-    // Metode specifice jocului
+    // Specific game methods
     void spawnInitialEnemies();
     void checkCollisions();
 

@@ -2,24 +2,23 @@
 #include <algorithm>
 #include <iostream>
 
-// Folosim declaratii locale in cpp
 using std::max;
 using std::min;
 using std::remove_if;
 
+// 1. Constructor remains the same, but it is now private (defined in Header)
 Player::Player() : Entity(100.f, {60.f, 40.f}) {
     body.setFillColor(sf::Color(100, 200, 255));
     body.setPosition(370.f, 520.f);
 }
 
-Entity* Player::clone() const {
-    return new Player(*this);
-}
+// 2. REMOVED clone() method.
+// A Singleton implies there is only ONE. Cloning creates a second one.
+// If your Entity class forces you to have clone(), you must restructure your hierarchy.
 
 void Player::handleInput(const InputState& input, sf::Time dt) {
     sf::Vector2f movement{0.f, 0.f};
-    
-    // Logica de miscare (identica cu cea existenta)
+
     if (input.up)    movement.y -= speed;
     if (input.down)  movement.y += speed;
     if (input.left)  { movement.x -= speed; lastDirection = Facing::Left; }
@@ -35,17 +34,14 @@ void Player::handleInput(const InputState& input, sf::Time dt) {
 }
 
 void Player::update(sf::Time dt, const sf::Vector2u& windowSize) {
-    // Pastrarea in limitele ferestrei
     auto pos = body.getPosition();
     auto size = body.getSize();
     pos.x = max(0.f, min(pos.x, (float)windowSize.x - size.x));
     pos.y = max(0.f, min(pos.y, (float)windowSize.y - size.y));
     body.setPosition(pos);
-    
-    // Actualizare proiectile
+
     for (auto& b : bullets) b.update(dt);
-    
-    // Stergere proiectile iesite din ecran
+
     bullets.erase(
         remove_if(bullets.begin(), bullets.end(),
             [&](const Projectile& p){

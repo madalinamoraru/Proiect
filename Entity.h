@@ -52,7 +52,7 @@ public:
     virtual void update(sf::Time dt, const sf::Vector2u& windowSize) = 0;
     virtual void draw(sf::RenderWindow& window) const = 0;
     // Constructor virtual (clone)
-    virtual Entity* clone() const = 0;
+    virtual Entity* clone() const { return nullptr; }
 
     // Functii virtuale
     virtual void takeDamage(float damage);
