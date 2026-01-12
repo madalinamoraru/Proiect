@@ -6,15 +6,11 @@ using std::max;
 using std::min;
 using std::remove_if;
 
-// 1. Constructor remains the same, but it is now private (defined in Header)
 Player::Player() : Entity(100.f, {60.f, 40.f}) {
     body.setFillColor(sf::Color(100, 200, 255));
     body.setPosition(370.f, 520.f);
 }
 
-// 2. REMOVED clone() method.
-// A Singleton implies there is only ONE. Cloning creates a second one.
-// If your Entity class forces you to have clone(), you must restructure your hierarchy.
 
 void Player::handleInput(const InputState& input, sf::Time dt) {
     sf::Vector2f movement{0.f, 0.f};
